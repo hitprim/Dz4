@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int const D = 10;
+int const B = 10;
+
+
+int main() {
+	setlocale(0, "");
+	int a, b, prime;
+	cout << "Для первого задания: " << endl;
+	cin >> a >> b;
+	cout << "Для четвертого: " << endl;
+	cin >> prime;
+	// №1
+	if ((a + b) <= 20 && (a + b) >= 10)
+		cout << "true";
+	else cout << "false";
+
+	cout <<endl<< "==============="<<endl;
+	//№2
+	if ((D + B) == 10 || (D == 10 && B == 10))
+		cout << "true";
+	else cout << "false";
+
+	cout <<endl <<"==============="<<endl;
+	//№3
+	vector<int> array(50);
+	int num = 1;
+	for (int i = 0; i < 50; i++) {
+		array[i] = num;
+		num++;
+	}
+	cout << "Your numbers: ";
+	for (int i : array) {
+		if (i % 2 != 0)
+			cout << i << " ";
+	}
+
+	cout << endl << "===============" << endl;
+	//№4
+	bool flag = true;
+	for (int i = 2; i < prime; i++) {
+		if (prime % i == 0) {
+			cout << "Not prime";
+			flag = false;
+			break;
+		}
+	}
+	if (flag == true)
+		cout << "Prime";
+}
